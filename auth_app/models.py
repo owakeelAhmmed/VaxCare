@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models import Q
+from cloudinary.models import CloudinaryField
 
 
 class CustomUser(AbstractUser):
@@ -16,7 +17,8 @@ class CustomUser(AbstractUser):
     vaccination_history = models.TextField(blank=True, null=True)
     specialization = models.CharField(max_length=50, blank=True, null=True)
     contact = models.CharField(max_length=15, blank=True, null=True)
-    profile_picture = models.ImageField(upload_to='profiles/', blank=True, null=True)
+    # profile_picture = models.ImageField(upload_to='profiles/', blank=True, null=True)
+    profile_picture = CloudinaryField('profile_picture', blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.role == 'PATIENT' and not self.nid and not self.is_superuser:

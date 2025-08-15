@@ -7,6 +7,7 @@ from .models import CustomUser
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
+    profile_picture = serializers.ImageField(required=False, allow_null=True)
 
     class Meta:
         model = CustomUser
@@ -32,6 +33,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    profile_picture = serializers.ImageField(required=False, allow_null=True)
     class Meta:
         model = CustomUser
         fields = [
