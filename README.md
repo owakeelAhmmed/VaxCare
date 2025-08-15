@@ -76,6 +76,13 @@ It provides separate features for **Patients, Doctors, and Admins**.
 - `POST /api/campaigns-booking/` → Book campaign (Patient only)  
 - `POST /api/campaign-reviews/` → Review campaign (Patient only)  
 
+### Interactive API docs available via Swagger UI at:
+
+- `http://localhost:8000/swagger/`
+
+### Alternative documentation using Redoc at:
+
+- `http://localhost:8000/redoc/`
 ---
 
 ## ⚙️ Installation & Setup
